@@ -1,0 +1,52 @@
+<template name="DegreePlanner">
+    <!-- Side Bar -->
+    {{> sidebar }}
+    {{> mobilesidebar}}
+
+    <!-- Main Area -->
+    <div class="ui two column grid stackable" id="ProfileInfo" style="margin: 0;">
+
+        <!-- Row One -->
+        <div class="twelve wide column" style="padding-bottom: 0">
+            {{> instructions }}
+        </div>
+
+        <!-- Row Two -->
+        <div class="row" style="padding-bottom: 0">
+            <!-- Degree Planner -->
+            <div class="sixteen wide column">
+                {{> planner }}
+            </div>
+        </div>
+
+        <!-- Row Three -->
+        <div class="three column row" style="padding-bottom: 0">
+            <div class="column" style="padding-right: 0.5rem">
+                {{> addcourses }}
+            </div>
+            <div class="column" style="padding-right: 0.5rem; padding-left: 0.5rem">
+                {{> addopp }}
+            </div>
+            <div class="column" style="padding-left: 0.5rem">
+                {{> addother }}
+            </div>
+        </div>
+
+        <!-- Row Four -->
+        <div class="row" style="padding-bottom: 0">
+            <!-- Warning/Recommendations -->
+            <div class="eight wide column" style="padding-right: 0.5rem">
+                {{> warning }}
+            </div>
+
+            <div class="eight wide column" style="padding-left: 0.5rem">
+                {{> rec }}
+            </div>
+        </div>
+
+        <div class="sixteen wide column" style="padding: 1rem 0 0 0">
+            {{> footer }}
+        </div>
+
+    </div>
+</template>

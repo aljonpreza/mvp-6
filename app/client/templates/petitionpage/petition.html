@@ -1,0 +1,73 @@
+<template name="Petition">
+  <!-- Sidebars -->
+  {{#IfLoggedIn}}
+  {{> sidebar }}
+  {{> mobilesidebar }}
+
+  <div class="ui grid stackable" id="ProfileInfo" style="margin: 0;">
+
+    <div class="six wide column">
+
+      <div class="ui segments">
+        <div class="ui segment">
+          <h2 class="ui header light-green-text">PETITIONS</h2>
+          <p>Let your voice be heard.  Get involved within the community and help make a difference.</p>
+        </div>
+
+        <div class="ui vertical white segment" style="padding: 1em 1em;">
+          <div class="ui negative message hidden" id="petitionWarning">
+            <i class="close icon"></i>
+            <div class="header">
+              Uh-oh! There was an error in your submission.
+            </div>
+            <p>Please be sure to enter both title and description.</p>
+          </div>
+
+          <div class="ui form" id="petitionInput">
+            <div class="field">
+              <label>Title</label>
+              <input type="text" name="title" placeholder="Title">
+            </div>
+            <div class="field">
+              <label>Description</label>
+              <textarea name="description"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="ui cyan bottom attached button" tabindex="0" id="addPetition"><i class="add circle icon"></i>ADD</div>
+      </div>
+    </div>
+
+    <div class="ten wide column">
+
+      {{ #each petitionList }}
+      <div class="ui fluid card">
+        <div class="content">
+          <div class="header light-green-text">{{title}}</div>
+          <div class="meta">
+            <span class="right floated time experience-text">{{formatDate createdAt }}</span>
+            <span class="category experience-text">{{uhEmail}}</span>
+          </div>
+          <div class="description">
+            <p style="text-indent: 1rem;">{{description}}</p>
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="right floated author">
+            <button class="ui cyan button white-text">PARTICIPATE</button>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+
+  </div>
+
+  <div class="sixteen wide column" style="padding: 1rem 0 0 0">
+    {{> footer }}
+  </div>
+
+  {{/IfLoggedIn}}
+
+</template>

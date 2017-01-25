@@ -1,0 +1,307 @@
+<template name="ListData">
+    <!-- Side Bar -->
+    {{> sidebar }}
+    {{> mobilesidebar}}
+
+    <div class="ui grid stackable" id="ProfileInfo" style="margin: 0;">
+
+        <!--<div class="sixteen wide column">
+            <table class="ui celled table">
+                <thead>
+                <tr>
+                    <th class="light-green-text">USERS</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each userList}}
+                <tr>
+                    <td>{{#markdown}}{{{description}}}{{/markdown}}</td>
+                    <td><img width=50px class="img-circle" src="{{ picture }}"></td>
+                </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>-->
+
+        <!-- Degree Plans -->
+        <div class="sixteen wide column">
+            <table class="ui celled table" style="margin-bottom: 0 !important; border-radius: 0;">
+                <thead>
+                <tr>
+                    <th class="light-green-text">DEGREE PLANS</th>
+                </tr>
+                </thead>
+            </table>
+
+            <div style="height: 402px !important; overflow: scroll; border-bottom: 1px solid rgba(34, 36, 38, 0.15);">
+                <table class="ui celled table" style="border-radius: 0 !important; border-top: 0;">
+                    <tbody>
+                    {{#each degreePlanList}}
+                    <tr>
+                        <td>{{#markdown}}{{{description}}}{{/markdown}}</td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <!-- Degree Goals -->
+        <div class="sixteen wide column" style="margin-top: -1rem;">
+            <table class="ui celled table" style="margin-bottom: 0 !important; border-radius: 0;">
+                <thead>
+                <tr>
+                    <th class="light-green-text">DEGREE GOALS<br><span class="experience-text">NAME - SLUG - DESCRIPTION</span></th>
+                </tr>
+                </thead>
+            </table>
+
+            <div style="height: 402px !important; overflow: scroll; border-bottom: 1px solid rgba(34, 36, 38, 0.15);">
+                <table class="ui celled table" style="border-radius: 0 !important; border-top: 0;">
+                    <tbody>
+                    {{#each degreeGoalList}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{slugName}}</td>
+                        <td>{{#markdown}}{{{description}}}{{/markdown}}</td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tag Types -->
+        <div class="six wide column" style="margin-top: -1rem;">
+            <table class="ui celled table" style="margin-bottom: 0 !important; border-radius: 0;">
+                <thead>
+                <tr>
+                    <th class="light-green-text">TAG TYPES<br><span class="experience-text">NAME - SLUG - DESCRIPTION</span></th>
+                </tr>
+                </thead>
+            </table>
+
+            <div>
+                <table class="ui celled table" style="border-radius: 0 !important; border-top: 0;">
+                    <tbody>
+                    {{#each tagTypeList}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{slug}}</td>
+                        <td>{{description}}</td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="ten wide column" style="margin-top: -1rem; margin-left: -1rem; padding-right: 0;">
+            <table class="ui celled table" style="margin-bottom: 0 !important; border-radius: 0;">
+                <thead>
+                <tr>
+                    <th class="light-green-text">TAGS<br><span class="experience-text">NAME - SLUG - TAG TYPE - DESCRIPTION</span></th>
+                </tr>
+                </thead>
+            </table>
+
+            <div style="height: 402px !important; overflow: scroll; border-bottom: 1px solid rgba(34, 36, 38, 0.15);">
+                <table class="ui celled table" style="border-radius: 0 !important; border-top: 0;">
+                    <tbody>
+                    {{#each tagList}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{slug}}</td>
+                        <td>{{tagType}}</td>
+                        <td>{{#markdown}}{{description}}{{/markdown}}</td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Opportunity Types -->
+        <div class="six wide column" style="margin-top: -1rem;">
+            <table class="ui celled table" style="margin-bottom: 0 !important; border-radius: 0;">
+                <thead>
+                <tr>
+                    <th class="light-green-text">OPPORTUNITY TYPES<br><span class="experience-text">NAME - SLUG - DESCRIPTION</span></th>
+                </tr>
+                </thead>
+            </table>
+
+            <div>
+                <table class="ui celled table" style="border-radius: 0 !important; border-top: 0;">
+                    <tbody>
+                    {{#each opportunityTypeList}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{slug}}</td>
+                        <td>{{description}}</td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Opportunities -->
+        <div class="ten wide column" style="margin-top: -1rem; margin-left: -1rem; padding-right: 0;">
+            <table class="ui celled table" style="margin-bottom: 0 !important; border-radius: 0;">
+                <thead>
+                <tr>
+                    <th class="light-green-text">OPPORTUNITIES<br><span class="experience-text">NAME - SLUG - TAG TYPE - DESCRIPTION</span></th>
+                </tr>
+                </thead>
+            </table>
+
+            <div style="height: 402px !important; overflow: scroll; border-bottom: 1px solid rgba(34, 36, 38, 0.15);">
+                <table class="ui celled table" style="border-radius: 0 !important; border-top: 0;">
+                    <tbody>
+                    {{#each opportunityList}}
+                    <tr>
+                        <td>{{#markdown}}{{{description}}}{{/markdown}}</td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Opportunities Instances -->
+        <div class="sixteen wide column" style="margin-top: -1rem;">
+            <table class="ui celled table" style="margin-bottom: 0 !important; border-radius: 0;">
+                <thead>
+                <tr>
+                    <th class="light-green-text">OPPORTUNITY INSTANCES<br><span class="experience-text">SEMESTER - OPPORTUNITY - VERIGIED - HRS/WK - STUDENT</span></th>
+                </tr>
+                </thead>
+            </table>
+
+            <div style="height: 402px !important; overflow: scroll; border-bottom: 1px solid rgba(34, 36, 38, 0.15);">
+                <table class="ui celled table" style="border-radius: 0 !important; border-top: 0;">
+                    <tbody>
+                    {{#each opportunityInstanceList}}
+                    <tr>
+                        <td>{{semester}}</td>
+                        <td>{{opportunity}}</td>
+                        <td>{{verified}}</td>
+                        <td>{{hrswk}}</td>
+                        <td>{{student}}</td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Courses -->
+        <div class="sixteen wide column" style="margin-top: -1rem;">
+            <table class="ui celled table" style="margin-bottom: 0 !important; border-radius: 0;">
+                <thead>
+                <tr>
+                    <th class="light-green-text">COURSES<br><span class="experience-text">SEMESTER - OPPORTUNITY - VERIGIED - HRS/WK - STUDENT</span></th>
+                </tr>
+                </thead>
+            </table>
+
+            <div style="height: 402px !important; overflow: scroll; border-bottom: 1px solid rgba(34, 36, 38, 0.15);">
+                <table class="ui celled table" style="border-radius: 0 !important; border-top: 0;">
+                    <tbody>
+                    {{#each courseList}}
+                    <tr>
+                        <td>{{#markdown}}{{{description}}}{{/markdown}}</td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Course Instances-->
+        <div class="sixteen wide column" style="margin-top: -1rem;">
+            <table class="ui celled table" style="margin-bottom: 0 !important; border-radius: 0;">
+                <thead>
+                <tr>
+                    <th class="light-green-text">COURSE INSTANCES<br><span class="experience-text">SEMESTER - COURSE - VERIFIED - GRADE - CREDIT HRS - STUDENT - NOTE</span></th>
+                </tr>
+                </thead>
+            </table>
+
+            <div style="height: 402px !important; overflow: scroll; border-bottom: 1px solid rgba(34, 36, 38, 0.15);">
+                <table class="ui celled table" style="border-radius: 0 !important; border-top: 0;">
+                    <tbody>
+                    {{#each courseInstanceList}}
+                    <tr>
+                        <td>{{semester}}</td>
+                        <td>{{course}}</td>
+                        <td>{{verified}}</td>
+                        <td>{{grade}}</td>
+                        <td>{{credithrs}}</td>
+                        <td>{{student}}</td>
+                        <td>{{note}}</td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Work Instances-->
+        <div class="sixteen wide column" style="margin-top: -1rem;">
+            <table class="ui celled table" style="margin-bottom: 0 !important; border-radius: 0;">
+                <thead>
+                <tr>
+                    <th class="light-green-text">WORK INSTANCES<br><span class="experience-text">SEMESTER - HRS/WK - STUDENT</span></th>
+                </tr>
+                </thead>
+            </table>
+
+            <div style="height: 402px !important; overflow: scroll; border-bottom: 1px solid rgba(34, 36, 38, 0.15);">
+                <table class="ui celled table" style="border-radius: 0 !important; border-top: 0;">
+                    <tbody>
+                    {{#each workInstanceList}}
+                    <tr>
+                        <td>{{semester}}</td>
+                        <td>{{hrswk}}</td>
+                        <td>{{student}}</td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Slugs -->
+        <div class="sixteen wide column" style="margin-top: -1rem;">
+            <table class="ui celled table" style="margin-bottom: 0 !important; border-radius: 0;">
+                <thead>
+                <tr>
+                    <th class="light-green-text">SLUGS<br><span class="experience-text">NAME - ENTITY NAME</span></th>
+                </tr>
+                </thead>
+            </table>
+
+            <div style="height: 402px !important; overflow: scroll; border-bottom: 1px solid rgba(34, 36, 38, 0.15);">
+                <table class="ui celled table" style="border-radius: 0 !important; border-top: 0;">
+                    <tbody>
+                    {{#each slugList}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{entityName}}</td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    {{> footer }}
+
+
+</template>

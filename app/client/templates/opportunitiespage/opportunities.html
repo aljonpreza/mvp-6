@@ -1,0 +1,34 @@
+<template name="Opportunities">
+  <!-- Side Bar -->
+  {{#IfLoggedIn}}
+  {{> sidebar }}
+  {{> mobilesidebar}}
+
+  <div class="ui two column grid stackable" id="ProfileInfo" style="margin-left: 1rem; margin-bottom: 1rem; margin-right: 0.5rem; margin-top: 0.5rem">
+
+    {{ #each opportunitiesList }}
+    <div class="column" style="padding-bottom: 0; padding-left: 0">
+      <div class="ui fluid card">
+        <div class="content" style="height: 150px; overflow: scroll;">
+          <div class="header light-green-text">{{name}}</div>
+          <div class="description">
+            <p style="text-indent: 1rem;">{{#markdown}}{{description}}{{/markdown}}</p>
+          </div>
+        </div>
+        <div class="extra content">
+          {{ #each tags }}
+          <div class="right floated author" style="margin-left: 1rem;">
+            <a class="ui cyan tag label white-text">{{this}}</a>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    {{/each}}
+
+  </div>
+
+  {{> footer }}
+  {{/IfLoggedIn}}
+
+</template>

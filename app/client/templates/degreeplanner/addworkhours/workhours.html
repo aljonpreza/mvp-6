@@ -1,0 +1,33 @@
+<template name="workhours">
+  <h3 class="light-green-text headerTitle">work hours</h3>
+
+  <div class="ui negative message hidden" id="workHoursWarning">
+    <i class="close icon"></i>
+    <div class="header">
+      Uh-oh! There was an error in your submission.
+    </div>
+    <p>Please be sure to enter the amount of hours you've worked per week.</p>
+  </div>
+
+  <div class="ui form" id="workHoursInput">
+    <div class="field">
+      <label># of Hours Per Week</label>
+      <input name="workhours" type="number" placeholder="Work Hours">
+    </div>
+    <div class="ui icon left pointing dropdown cyan white-text button">
+      <span>Add to Planner</span>
+      <div class="menu">
+        <div class="item" id="spr2016">
+          Spring 2016
+        </div>
+        <div class="item" id="sum2016">
+          Summer 2016
+        </div>
+        <div class="item" id="fall2016">
+          Fall 2016
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>

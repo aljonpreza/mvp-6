@@ -1,0 +1,48 @@
+<template name="status">
+  <div class="ui segments">
+
+    <!-- User Information -->
+    {{#each userinfo}}
+    <div class="ui segment">
+      <h3 class="light-green-text headerTitle" style="margin-top: 0;">STATUS</h3>
+
+      <span class="profileInformation">Name:</span>
+      <span class="profileIndent">{{name}}</span> <br>
+
+      <span class="profileInformation">Email:</span>
+      <span class="profileIndent">{{email}}</span> <br>
+
+      <span class="profileInformation">Primary Degree Goal:</span>
+      <span class="profileIndent">{{primaryGoal}}</span> <br>
+
+      <span class="profileInformation">Expected Graduation Date:</span>
+      <span class="profileIndent">{{gradSemester}}</span>
+    </div>
+    {{/each}}
+    <!-- User Status -->
+    <div class="ui horizontal segments white">
+      <div class="ui segment">
+        <h2 class="ui header cyan-text">
+          3.6
+          <div class="sub header">GPA</div>
+        </h2>
+      </div>
+      <div class="ui segment">
+        <h2 class="ui header cyan-text">
+          16
+          <div class="sub header">Credits</div>
+        </h2>
+      </div>
+      <div class="ui segment">
+        <h2 class="ui header cyan-text">
+          34
+          <div class="sub header">Courses Remain</div>
+        </h2>
+      </div>
+    </div>
+
+    <div class="ui segment center aligned">
+      <div class="ui bottom attached label">as of Fall 2015</div>
+    </div>
+  </div>
+</template>

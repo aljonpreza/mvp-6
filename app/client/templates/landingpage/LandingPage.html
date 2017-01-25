@@ -1,0 +1,163 @@
+<head>
+    <title>RadGrad</title>
+</head>
+<template name="LandingPage">
+
+    <div id="top"></div>
+
+    <!-- Following Menu -->
+    <div class="ui large top fixed hidden gradient menu landing">
+        <div class="ui container">
+            <a class="white-text item" href="#top">Home</a>
+            <a class="item white-text" href="#features">Features</a>
+            <a class="item white-text" href="#contact">Contact</a>
+            <div class="right menu">
+                {{> CasLogin }}
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Contents -->
+    <div class="pusher">
+        <div class="ui grad inverted vertical masthead center aligned segment">
+
+            <div class="ui container">
+                <div class="ui large secondary inverted pointing menu">
+                    <a class="toc item">
+                        <i class="sidebar icon"></i>
+                    </a>
+                    <a class="white-text item">Home</a>
+                    <a class="item white-text" href="#features">Features</a>
+                    <a class="item white-text" href="#contact">Contact</a>
+                    <div class="right item">
+                        {{> CasLogin }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui text container">
+                <h1 class="ui inverted header" style="font-weight: 600;">
+                    RadGrad
+                </h1>
+                <h2 class="white-text">Success has never been made easier.</h2>
+            </div>
+
+        </div>
+
+        <!-- Mission Header -->
+        <div class="ui stackable center aligned grid" style="margin: 0;">
+            <div class="divided row grey-bg" style="padding: 2.8rem;">
+                <div class="eight wide left aligned column">
+                    <h3 style="line-height: 2.5rem;">Degree planning can be frustrating.<span class="light-green-text doublespace">RadGrad</span> is a system that helps computer science students evaluate the sometimes overwhelming number of academic and extracurricular opportunities, and determine ways to invest their time most productively given their career goals.
+                    </h3>
+                </div>
+                <div class="eight wide middle aligned column">
+                    <h3>RadGrad is constantly growing!</h3>
+                    <a class="ui button cyan" href="https://huboard.com/radgrad/mvp-6#/">VISIT OUR HUBOARD <i class="ui right arrow icon"></i></a>
+                </div>
+            </div>
+
+
+            <!-- ICE METRICS -->
+            <div class="ui steps" style="width: 100%; border-radius: 0; margin: 0; border-top: none; padding: 0;" id="features">
+                <div class="step backwards lpic" style="background: url('http://www.jcsu.edu/uploads/5c/cc/5ccc13b416c612b21bb0409aa8ec253b/Computer-Science-and-Information-Systems-1.jpg'); background-size: cover; width: 45%">
+                    <span class="white-text imagedesc">ICE METRICS</span>
+                </div>
+                <div class="step footer-color" style="width: 55%; padding: 7rem !important;">
+                    <h2 class="ui horizontal divider header light-green-text">
+                        BEYOND GPA
+                    </h2>
+                    <p class="ldesc white-text">A decent GPA is only one piece of the puzzle for a well-rounded computer science degree experience. RadGrad provides a self-assessment tool called "ICE", which stands for innovation, competency, and experience.<span class="doublespace">To</span> be competitive in the high tech job market, you need to demonstrate these key factors: sufficient course grades, a constant drive to research, and outstanding work through real-world experiences.
+                    </p>
+                </div>
+            </div>
+
+            <!-- INTERESTS -->
+            <div class="ui steps" style="width: 100%; border-radius: 0; margin: 0; border-top: none; padding: 0;">
+                <div class="step grey-bg" style="width: 55%; padding: 7rem !important;">
+                    <h2 class="ui horizontal divider header light-green-text">
+                        BUILT FOR YOU
+                    </h2>
+                    <p class="ldesc">RadGrad provides over 100 possible interest areas spanning computer science topics, languages, and technologies, and over 50 career directions.<span class="doublespace">These</span> areas are formed as tags that will allow the system to provide a plan that is fit for one's needs.<span class="doublespace">These</span> tags can be found anywhere throughout the system such as in courses, opportunities, and in vignettes.<span class="doublespace">Once</span> a student adds an interest or degree tag to their profile, they can filter those areas based on what is important to them.
+                    </p>
+                </div>
+                <div class="step lpic" style="background: url('http://lazowska.cs.washington.edu/computer.science_01.jpg'); background-size: cover; width: 45%;">
+                    <span class="white-text imagedesc">FILTERING</span>
+                </div>
+            </div>
+
+
+            <!-- VIGNETTES -->
+            <div class="ui steps" style="width: 100%; border-radius: 0; margin: 0; border-top: none; padding: 0;">
+                <div class="step backwards lpic" style="background: url('http://buzzghana.com/wp-content/uploads/2014/11/computer-g.jpg'); background-size: cover; width: 45%">
+                    <span class="white-text imagedesc">VIGNETTES</span>
+                </div>
+                <div class="step footer-color" style="width: 55%; padding: 7rem !important;">
+                    <h2 class="ui horizontal divider header light-green-text">
+                        KEEP IN TOUCH
+                    </h2>
+                    <p class="ldesc white-text">Ever wondered how other people are doing within the industry?<span class="doublespace">RadGrad</span> provides vignettes that are posts created by students who have completed an opportunity outside of school.<span class="doublespace">These</span> vignettes are recommended through the student's dashboard along with opportunities and petitions that one can take part in.<span class="doublespace">We</span> hope that RadGrad can be a hub where students can share their experiences and thus pay it forward for other students to consider joining.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="divided two column row" style="padding: 2.8rem; margin-bottom: 1rem;" id="contact">
+                <div class="right aligned column">
+                    <h1>CONTACT US</h1>
+                    <h4 style="margin-top: 0;">We would love to hear your feedback or<br> answer any questions about our project.<br></h4>
+                </div>
+
+                <div class="left aligned column">
+                    <div class="ui items">
+                        <div class="item">
+                            <a class="ui tiny image">
+                                <img src="/images/kelsie-av.jpeg">
+                            </a>
+                            <div class="content">
+                                <span class="header light-green-text">Kelsie Yamakawa</span>
+                                <div class="description">
+                                    <i class="experience-text large github alternate icon"></i><a class="contactlink" href="https://github.com/kelsieayamakawa">https://github.com/kelsieayamakawa</a> <br>
+                                    <i class="experience-text large mail outline icon"></i>kayama@hawaii.edu
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a class="ui tiny image">
+                                <img src="/images/sora-av.jpeg">
+                            </a>
+                            <div class="content">
+                                <span class="header light-green-text">Sorapong Khongnawang</span>
+                                <div class="description">
+                                    <i class="experience-text large github alternate icon"></i><a class="contactlink" href="https://github.com/khongnaw">https://github.com/khongnaw</a> <br>
+                                    <i class="experience-text large mail outline icon"></i>khongnaw@hawaii.edu
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a class="ui tiny image">
+                                <img src="/images/aljon-av.png">
+                            </a>
+                            <div class="content">
+                                <span class="header light-green-text">Aljon Preza</span>
+                                <div class="description">
+                                    <i class="experience-text large github alternate icon"></i><a class="contactlink" href="https://github.com/aljonpreza">https://github.com/aljonpreza</a> <br>
+                                    <i class="experience-text large mail outline icon"></i>aljonp@hawaii.edu
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        {{> footer}}
+    </div>
+
+
+</template>
+

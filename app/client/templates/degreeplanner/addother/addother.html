@@ -1,0 +1,45 @@
+<template name="addother">
+  <!-- Other Courses -->
+  <div class="ui segment">
+    {{> workhours }}
+  </div>
+
+
+  <div class="ui segment">
+    <h3 class="light-green-text headerTitle">other courses</h3>
+
+    <div class="ui styled accordion" align="left" style="height: 266px; overflow: scroll;">
+
+      {{ #each addcoursesList }}
+      <div class="title">
+        <i class="dropdown icon"></i>
+        {{number}} ({{name}})
+      </div>
+      <div class="content">
+
+        <p class="transition visible" style="display: block !important; text-indent: 1rem;">{{#markdown}}{{description}}{{/markdown}}
+        </p>
+
+        <div class="cyan white-text ui left pointing dropdown icon button">
+          <span>Add to Planner</span>
+          <div class="menu">
+            <div class="item spr2016">
+              Spring 2016
+            </div>
+            <div class="item sum2016">
+              Summer 2016
+            </div>
+            <div class="item fall2016">
+              Fall 2016
+            </div>
+          </div>
+        </div>
+
+      </div>
+      {{/each}}
+
+    </div>
+
+  </div><!-- End Other Courses -->
+
+</template>

@@ -1,0 +1,85 @@
+<template name="Vignette">
+    <!-- Sidebars -->
+    {{#IfLoggedIn}}
+    {{> sidebar }}
+    {{> mobilesidebar }}
+
+    <div class="ui grid stackable" id="ProfileInfo" style="margin: 0;">
+
+        <div class="six wide column">
+
+            <div class="ui segments">
+                <div class="ui segment">
+                    <h2 class="ui header light-green-text">VIGNETTES</h2>
+                    <p>Stories and experiences are vitally important to learning. RadGrad vignettes are short postings provided by users regarding a professional experience.</p>
+                </div>
+
+                <div class="ui vertical white segment" style="padding: 1em 1em;">
+                    <div class="ui negative message hidden" id="vignetteWarning">
+                        <i class="close icon"></i>
+                        <div class="header">
+                            Uh-oh! There was an error in your submission.
+                        </div>
+                        <p>Please be sure to enter both title and description.</p>
+                    </div>
+
+                    <div class="ui form" id="vignetteInput">
+                        <div class="field">
+                            <label>Title</label>
+                            <input name="title" type="text" placeholder="Title">
+                        </div>
+                        <div class="field">
+                            <label>Text</label>
+                            <textarea name="description"></textarea>
+                        </div>
+                        <div class="field">
+                            <div class="ui action input" style="width: 100%;">
+                                <select id="tagInput" multiple="" class="ui fluid dropdown">
+                                    <option value="">Select Tags</option>
+                                    {{ #each tagList }}
+                                    <option value="{{name}}">{{name}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui cyan bottom attached button" tabindex="0" id="addTags"><i class="add circle icon"></i>ADD</div>
+            </div>
+        </div>
+
+        <div class="ten wide column">
+
+            {{ #each vignetteList }}
+            <div class="ui fluid card">
+                <div class="content">
+                    <div class="header light-green-text">{{title}}</div>
+                    <div class="meta">
+                        <span class="right floated time experience-text">{{ formatDate createdAt}}</span>
+                        <span class="category experience-text" style="font-weight: 600">{{uhEmail}}</span>
+                    </div>
+                    <div class="description">
+                        <p style="text-indent: 1rem;">{{description}}</p>
+                    </div>
+                </div>
+                <div class="extra content">
+                    {{ #each tags }}
+                    <div class="right floated author" style="margin-left: 1rem;">
+                        <a class="ui cyan tag label white-text">{{this}}</a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+
+    </div>
+
+    <div class="sixteen wide column" style="padding: 1rem 0 0 0">
+        {{> footer }}
+    </div>
+
+    {{/IfLoggedIn}}
+
+</template>

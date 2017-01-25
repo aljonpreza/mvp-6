@@ -1,0 +1,89 @@
+<template name="degreesummary">
+  <div class="ui segment">
+
+    <h3 class="light-green-text headerTitle" style="margin-left: 44px;">Degree plan summary</h3>
+    
+    <div class="arrow-holder"></div>
+
+    <div id="carousel" style="padding: 0 45px 0 45px; margin: 0;">
+
+      <!-- 2012 - 2013 -->
+      {{#each userdegree}}
+      <div>
+        <div class="ui three column grid stackable">
+
+          <!-- FALL 2012 -->
+          {{#each this.year}}
+          <div class="column">
+            <h4 class="ui center aligned cyan-text header">{{semester}}</h4>
+
+            <h5 class="ui horizontal divider header" style="margin: 0.3rem 0 0.3rem 0">
+              ICS COURSES
+            </h5>
+            <div class="ui middle aligned list" style="margin:0; padding: 0;">
+              {{#each this.courses}}
+              <div class="item">
+
+                <div class="right floated content">
+                  {{#if hasGrade grade}}
+                  <div class="ui competency-bg circular label white-text">{{changeGradetoC grade}}</div>
+                  {{/if}}
+                </div>
+
+
+                <div class="content">
+                  {{course}}
+                </div>
+              </div>
+              {{/each}}
+            </div>
+
+
+            <h5 class="ui horizontal divider header" style="margin: 0.3rem 0 0.3rem 0">
+              NON-ICS COURSES
+            </h5>
+            <div class="ui middle aligned list" style="margin:0; padding: 0;">
+              {{#each this.other_course}}
+              <div class="item">
+
+                <div class="content">
+                  {{course}}
+                </div>
+              </div>
+              {{/each}}
+            </div>
+
+            <h5 class="ui horizontal divider header" style="margin: 0.3rem 0 0.3rem 0">
+              OPPORTUNITIES
+            </h5>
+            {{#each this.opportunity}}
+            <div class="ui middle aligned list" style="margin:0; padding: 0;">
+              <div class="item" style="padding-top: 0.3rem; padding-bottom: 0.3rem;">
+                <div class="right floated content">
+                  <div class="ui innovation-bg circular label white-text">10</div>
+                  <div class="ui experience-bg circular label white-text">10</div>
+                </div>
+                <div class="content">
+                  {{opp}}
+                </div>
+              </div>
+            </div>
+            {{/each}}
+
+            {{#if hasWorkHours this.wkhr.hr}}
+            <h5 class="ui header right aligned">JOB: {{this.wkhr.hr}} HRS</h5>
+            {{else}}
+            <h5 class="ui header right aligned">JOB: 0 HRS</h5>
+            {{/if}}
+
+
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      {{/each}}
+
+    </div>
+
+  </div><!--end of degree summary-->
+</template>

@@ -1,0 +1,236 @@
+/* CSS declarations go here */
+body, html {
+  color: #333 !important;
+  background-color: #f3f3f3 !important;
+}
+
+.grey-bg {
+  background-color: #f3f3f3 !important;
+}
+
+.black-text {
+  color: #333 !important;
+}
+
+.light-green {
+  background-color: #8bc34a !important;
+}
+
+.light-green-lighten {
+  background-color: #9ccc65 !important;
+}
+
+.light-green-text {
+  color: #8bc34a !important;
+}
+
+.white-text {
+  color: white !important;
+}
+
+.cyan {
+  background-color: #00bcd4 !important;
+}
+
+.cyan-text {
+  color: #00bcd4 !important;
+}
+
+.white {
+  background-color: white !important;
+}
+
+.red-text {
+  color: #EF5350 !important;
+}
+
+.innovation-text {
+  color: #00acc1 !important;
+}
+
+.competency-text {
+  color: #7cb342 !important;
+}
+
+.experience-text {
+  color: #455a64 !important;
+}
+
+.innovation-bg {
+  background-color: #00acc1 !important;
+}
+
+.competency-bg {
+  background-color: #7cb342 !important;
+}
+
+.experience-bg {
+  background-color: #455a64 !important;
+}
+
+.footer-color {
+  background-color: #263238 !important;
+}
+
+/** Header **/
+.topHeader {
+  margin: 0;
+  height: 40px;
+}
+
+.headerName {
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.headerButton {
+  margin-top: 1rem !important;
+}
+
+.headerTitle {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+/** Views **/
+@media all and (max-width:630px) {
+  #topMenu, .IceProg {
+    display: none;
+  }
+}
+
+@media all and (max-width:820px) {
+  .IceProg, .lpic {
+    display: none !important;
+  }
+}
+
+
+@media all and (min-width:631px) {
+  #topMenu {
+    display: block;
+  }
+  .ui.sidebar.vertical.labeled.icon.menu.tiny.fixed {
+    visibility: visible !important;
+    display: block;
+  }
+  #mainHeader {
+    display: none;
+  }
+  #ProfileInfo {
+    padding-left: 130px;
+  }
+}
+
+/* Profile Info */
+.profileInfo {
+  padding: 1rem;
+}
+
+.profileInformation {
+  font-weight: bold;
+}
+
+.profileIndent {
+  padding-left: 0.3rem;
+  padding-bottom: 1rem;
+}
+
+/** Recommendations **/
+.ui.list > .item a.header {
+  color: #00bcd4 !important;
+}
+
+.ui.list > .item a.header:hover {
+  color: #00acc1  !important;
+}
+
+.contactlink {
+  color: #00bcd4 !important;
+}
+
+.contactlink:hover {
+  color: #00acc1 !important;
+}
+
+.ui.table tbody tr td p > a {
+  color: #00bcd4 !important;
+}
+
+.ui.table tbody tr td p > a:hover {
+  color: #00acc1 !important;
+}
+
+p > a {
+  color: #00bcd4 !important;
+}
+
+p > a:hover {
+  color: #00acc1  !important;
+}
+
+.ui.styled.accordion .active.title {
+  color: #00bcd4 !important;
+}
+.ui.styled.accordion .title:hover {
+  color: #00bcd4 !important;
+}
+
+a.ui.tiny.button.basic.headerButton.cas-logout:hover {
+  background-color: #689f38 !important;
+}
+
+button.ui.light-green.white-text.right.attached.floated.button:hover {
+  background-color: #689f38 !important;
+}
+
+div.ui.tiny.right.floated.light-green.white-text.button:hover {
+  background-color: #689f38 !important;
+}
+
+button.circular.ui.icon.button.light-green.white-text:hover {
+  background-color: #689f38 !important;
+}
+
+div.ui.tiny.button.cyan.white-text:hover {
+  background-color: #00838f !important;
+}
+
+button.ui.right.labeled.icon.approve.cyan.white-text.button:hover {
+  background-color: #00838f !important;
+}
+
+div.ui.cancel.experience-bg.button.white-text:hover {
+  background-color: #263238 !important;
+}
+
+/** ICE **/
+.progressDesc {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/** Sidebar **/
+.sideColor {
+  color: #f1f8e9 !important;
+}
+
+.activeColor {
+  background-color: #689f38 !important;
+}
+
+/** Slider Button **/
+.ui.button > .right.icon:not(.button) {
+  margin: 0 !important;
+}
+
+.ui.cyan.bottom.attached.button {
+  color: #b2ebf2;
+}
+
+.ui.cyan.bottom.attached.button:hover {
+  background-color: #00acc1  !important;
+}
+
+

@@ -1,0 +1,133 @@
+<template name="recommendations">
+  <div class="ui segments white">
+
+    <h3 class="light-green-text headerTitle" style="padding: 1rem 1rem 0rem 1rem">Recommendations</h3>
+
+    <div style="padding: 0rem 1rem 1rem 1rem">
+      <div class="ui top attached tabular menu">
+        <a class="item active" data-tab="first">Opportunities</a>
+        <a class="item" data-tab="second">Vignettes</a>
+        <a class="item" data-tab="third">Petitions</a>
+      </div>
+
+      <!-- Opportunities -->
+      <div class="ui bottom attached tab segment active" data-tab="first">
+
+        <div class="ui list">
+          {{ #each opportunitiesList}}
+          <div class="item">
+            <i class="newspaper icon cyan-text"></i>
+            <div class="content">
+              <a class="header" href="#{{slug}}">{{name}}</a>
+              <div class="description">{{hook}}</div>
+            </div>
+          </div>
+
+          <div class="ui modal" id="{{slug}}">
+            <div class="header light-green white-text">{{name}}</div>
+            <div class="content">
+              {{#markdown}}{{description}}{{/markdown}}
+
+              <span style="font-weight: 600; margin-right: 7px;">Tags: </span>
+              {{#each tags}}
+                <div class="ui tag cyan white-text label">{{this}}</div>
+              {{/each}}
+            </div>
+            <div class="actions">
+              <div class="ui cancel experience-bg button white-text">Close</div>
+            </div>
+          </div>
+          {{/each}}
+
+
+        </div>
+
+        <div style="text-align: right">
+          <a class="cyan-text" style="margin-top: 0; cursor: pointer; font-weight: 500;" href="{{ pathFor 'Opportunities' }}">VIEW MORE <i class="angle right icon"></i></a>
+        </div>
+
+      </div>
+
+
+      <!-- Vignettes -->
+      <div class="ui bottom attached tab segment" data-tab="second" style="margin-bottom: 0;">
+
+        <div class="ui list">
+
+          {{ #each vignetteList }}
+          <div class="item">
+            <i class="quote left icon cyan-text"></i>
+            <div class="content">
+              <a class="header" href="#{{slug}}">{{title}}</a>
+              <div class="description">{{ getHook description }}</div>
+            </div>
+          </div>
+
+          <div class="ui modal" id="{{slug}}">
+            <div class="header light-green white-text">{{title}}</div>
+            <div class="content">
+              <span style="font-weight: 600">Author: </span>{{uhEmail}}<br>
+              <span style="font-weight: 600">Created at:</span> {{ formatDate createdAt}} <br><br>
+              {{#markdown}}{{description}}{{/markdown}}
+
+
+              <span style="font-weight: 600; margin-right: 7px;">Tags: </span>
+              {{#each tags}}
+              <div class="ui tag cyan white-text label">{{this}}</div>
+              {{/each}}
+            </div>
+            <div class="actions">
+              <div class="ui cancel experience-bg button white-text">Close</div>
+            </div>
+          </div>
+          {{/each}}
+
+        </div>
+
+        <div style="text-align: right">
+          <a class="cyan-text" style="margin-top: 0; cursor: pointer; font-weight: 500;" href="{{ pathFor 'Vignette' }}">VIEW MORE <i class="angle right icon"></i></a>
+        </div>
+
+      </div>
+
+      <!-- Petitions -->
+      <div class="ui bottom attached tab segment" data-tab="third">
+
+        <div class="ui list">
+
+          {{ #each petitionList }}
+          <div class="item">
+            <i class="legal icon cyan-text"></i>
+            <div class="content">
+              <a class="header" href="#{{slug}}">{{title}}</a>
+              <div class="description">{{getHook description}}</div>
+            </div>
+          </div>
+
+          <div class="ui modal" id="{{slug}}">
+            <div class="header light-green white-text">{{title}}</div>
+            <div class="content">
+              <span style="font-weight: 600">Author: </span>{{uhEmail}}<br>
+              <span style="font-weight: 600">Created at:</span> {{ formatDate createdAt}} <br><br>
+
+              {{#markdown}}{{description}}{{/markdown}}
+            </div>
+            <div class="actions">
+              <button class="ui right labeled icon approve cyan white-text button">
+                <i class="ui legal icon"></i>
+                Participate
+              </button>
+              <div class="ui cancel experience-bg button white-text">Close</div>
+            </div>
+          </div>
+          {{/each}}
+
+        </div>
+
+        <div style="text-align: right">
+          <a class="cyan-text" style="margin-top: 0; cursor: pointer; font-weight: 500;" href="{{ pathFor 'Petition' }}">VIEW MORE <i class="angle right icon"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,44 @@
+<template name="sidebar">
+
+  <div id="topMenu">
+    <div class="ui sidebar vertical labeled icon menu tiny fixed" style="background-color: #8bc34a;">
+      <a class="item" style="border-color: white !important;">
+        {{#each userinfo}}
+        <img class="ui avatar tiny image" src="{{ picture }}"> <br>
+        {{/each}}
+        <a class="ui tiny button basic headerButton cas-logout" href="{{pathFor 'LandingPage'}}" style="color: #f1f8e9 !important;">LOGOUT</a>
+      </a>
+
+      <a href="{{ pathFor 'Home' }}" class="item sideColor {{#if currentRouteIs 'Home'}}activeColor{{/if}}">
+        <i class="home icon"></i>
+        Homepage
+      </a>
+      <a href="{{ pathFor 'DegreePlanner' }}" class="item sideColor {{#if currentRouteIs 'DegreePlanner'}}activeColor{{/if}}" style="border-color: white !important;">
+        <i class="student icon"></i>
+        Degree Planner
+      </a>
+      <a href="{{ pathFor 'ProfilePage' }}" class="item sideColor {{#if currentRouteIs 'ProfilePage'}}activeColor{{/if}}">
+        <i class="user icon"></i>
+        Profile
+      </a>
+      <a href="{{ pathFor 'Opportunities' }}" class="item sideColor {{#if currentRouteIs 'Opportunities'}}activeColor{{/if}}">
+        <i class="newspaper icon"></i>
+        Opportunities
+      </a>
+      <a href="{{ pathFor 'Vignette' }}" class="item sideColor {{#if currentRouteIs 'Vignette'}}activeColor{{/if}}">
+        <i class="quote left icon"></i>
+        Vignettes
+      </a>
+      <a href="{{ pathFor 'Petition' }}" class="item sideColor {{#if currentRouteIs 'Petition'}}activeColor{{/if}}">
+        <i class="legal icon"></i>
+        Petitions
+      </a>
+
+      <a href="{{ pathFor 'DataModelHome' }}" class="item sideColor {{#if currentRouteIs 'DataModelHome'}}activeColor{{/if}}" style="border-color: white !important;">
+        <i class="tasks icon"></i>
+        Catalog
+      </a>
+    </div>
+  </div>
+
+</template>

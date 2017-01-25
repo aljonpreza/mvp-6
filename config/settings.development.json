@@ -1,0 +1,28 @@
+{
+  "cas": {
+    "baseUrl": "https://cas-test.its.hawaii.edu/cas/",
+    "autoClose": true
+  },
+  "public": {
+    "cas": {
+      "loginUrl": "https://cas-test.its.hawaii.edu/cas/login",
+      "serviceParam": "service",
+      "popupWidth": 810,
+      "popupHeight": 610
+    },
+    "allowed_users": [
+      "johnson",
+      "aljonp",
+      "kayama",
+      "khongnaw"
+    ]
+  },
+
+  "galaxy.meteor.com": {
+    "env": {
+      "ROOT_URL": "http://radgrad-mvp-6.meteorapp.com",
+      "MONGO_URL": "mongodb://kayama:YOUSHALLNOTPASS!@ds017862.mlab.com:17862/radgrad-mvp-6"
+    }
+  }
+}
+

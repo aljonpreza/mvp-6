@@ -1,0 +1,56 @@
+<template name="addcourses">
+  <!-- ICS/EE Courses -->
+  <div class="ui segment">
+    <h3 class="light-green-text headerTitle">ICS/EE courses</h3>
+
+    <!-- Search Bar -->
+    <div class="ui search" style="text-align: center; padding-top: 5px; padding-bottom: 1rem !important;">
+      <div class="ui icon input">
+        <input class="prompt" type="text" placeholder="Search ICS/EE Courses" id="search-icscourse" data-list=".icscourse_list" autocomplete="off">
+        <i class="search icon"></i>
+      </div>
+    </div>
+
+      <div class="ui styled accordion" align="left" style="height: 400px; overflow:scroll;">
+
+        {{ #each addcoursesList }}
+        <div class="title">
+          <i class="dropdown icon"></i>
+          {{number}} ({{name}})
+        </div>
+        <div class="content">
+
+
+          <p class="transition visible" style="display: block !important; text-indent: 1rem;">{{#markdown}}{{description}}{{/markdown}}
+          <div class="ui divider"></div>
+
+          <span style="font-weight: 600;">Credit: </span> {{credithrs}}
+            <br><span style="font-weight: 600;">Tags: </span> {{tags}}
+          </p>
+
+          <div class="cyan white-text ui left pointing dropdown icon button">
+            <span>Add to Planner</span>
+            <div class="menu">
+              <div class="item spr2016">
+                Spring 2016
+              </div>
+              <div class="item sum2016">
+                Summer 2016
+              </div>
+              <div class="item fall2016">
+                Fall 2016
+              </div>
+            </div>
+          </div>
+
+        </div>
+        {{/each}}
+
+      </div>
+
+
+
+  </div><!-- End ICS/EE Courses -->
+
+</template>
+

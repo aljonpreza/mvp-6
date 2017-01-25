@@ -1,0 +1,43 @@
+<template name="degreegoals">
+  <div class="ui segment">
+    <h3 class="light-green-text headerTitle">Degree goals</h3>
+
+    <div class="ui negative message hidden" id="degreeGoalsWarning">
+      <i class="close icon"></i>
+      <div class="header">
+        Uh-oh! You seem to be adding duplicates to your degree goals.
+      </div>
+      <p>Delete them from the selection box to add your remaining degree goals.</p>
+    </div>
+
+    <div class="ui form" style="margin-bottom: 1em; padding: auto;">
+      <div class="field">
+        <div class="ui action input">
+          <select id="degreeGoalsInput" multiple="" class="ui dropdown">
+            <option value="">Select Degree Goals</option>
+            {{ #each degreeGoalList }}
+            <option value="{{slugName}}">{{name}}</option>
+            {{/each}}
+          </select><button class="ui light-green white-text right attached right floated button" id="degreeGoalsSubmit" type="submit"><i class="ui add icon" style="padding-left: 12px;"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui middle aligned celled list" style="margin:0; padding: 0;">
+
+      {{#each userinfo}}
+        {{ #each degreeGoals }}
+          <div class="item">
+            <div class="right floated content">
+              <div class="ui tiny button cyan white-text removeDegreeGoals"><i class="ui icon remove" style="margin: 0;"></i></div>
+            </div>
+            <div class="content">
+              {{this}}
+            </div>
+          </div>
+        {{/each}}
+      {{/each}}
+
+    </div>
+  </div>
+</template>

@@ -1,0 +1,44 @@
+<template name="interests">
+  <div class="ui segment">
+    <h3 class="light-green-text headerTitle">interests</h3>
+
+    <div class="ui negative message hidden" id="interestWarning">
+      <i class="close icon"></i>
+      <div class="header">
+        Uh-oh! You seem to be adding duplicates to your interests.
+      </div>
+      <p>Delete them from the selection box to add your remaining interests.</p>
+    </div>
+
+    <div class="ui form" style="margin-bottom: 1em; padding: auto;">
+      <div class="field">
+        <div class="ui action input">
+        <select id="interestInput" multiple="" class="ui fluid dropdown">
+          <option value="">Select Interests</option>
+          {{ #each tagList }}
+          <option value="{{slug}}">{{name}}</option>
+          {{/each}}
+        </select><button class="ui light-green white-text right attached right floated button" id="interestSubmit" type="submit"><i class="ui add icon" style="padding-left: 12px;"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui middle aligned celled list" style="margin:0; padding: 0;">
+
+      {{#each userinfo}}
+        {{#each tags}}
+          <div class="item">
+            <div class="right floated content">
+              <div class="ui tiny button cyan white-text removeInterest" id="{{this}}"><i class="ui icon remove" style="margin: 0;"></i></div>
+            </div>
+            <div class="content">
+              {{this}}
+            </div>
+          </div>
+        {{/each}}
+      {{/each}}
+
+
+    </div>
+  </div>
+</template>

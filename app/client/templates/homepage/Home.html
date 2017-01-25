@@ -1,0 +1,46 @@
+<template name="Home">
+  {{#IfLoggedIn}}
+  {{> sidebar }}
+  {{> mobilesidebar}}
+
+  <div class="ui two column grid stackable" id="ProfileInfo" style="margin: 0;">
+
+    <!-- Status -->
+    <div class="seven wide column" style="padding-bottom: 0; padding-right: 0.5rem">
+      {{> status }}
+    </div>
+
+    <!-- Recommendations -->
+    <div class="nine wide column" style="padding-bottom: 0; padding-left: 0.5rem">
+      {{> recommendations }}
+    </div>
+
+    <!-- ICE System -->
+    <div class="sixteen wide column" style="padding-bottom: 0">
+      {{> studentice }}
+    </div>
+
+    <div class="sixteen wide column" style="padding-bottom: 0">
+      {{> degreesummary }}
+    </div>
+
+    <div class="eight wide column" style="padding-bottom: 0; padding-right: 0.5rem">
+      {{> interests }}
+    </div>
+
+    <div class="eight wide column" style="padding-bottom: 0; padding-left: 0.5rem">
+      {{> degreegoals }}
+    </div>
+
+    <div class="sixteen wide column" style="padding: 1rem 0 0 0">
+      {{> footer }}
+    </div>
+
+
+  </div>
+{{/IfLoggedIn}}
+
+
+
+</template>
+

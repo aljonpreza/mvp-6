@@ -1,0 +1,148 @@
+<template name = "ProfilePage">
+  {{#IfLoggedIn}}
+  {{> sidebar }}
+  {{> mobilesidebar}}
+
+  <div class="ui three column grid stackable" id="ProfileInfo" style="margin: 0">
+
+    <div class="column" style="padding-right: 0.5rem">
+
+      {{#each userinfo}}
+         <img class="ui centered circular image" src="{{ picture }}" style="padding-bottom: 1rem">
+      {{/each}}
+
+      <div class="item" style="box-shadow: 0px 1px 3px 0px #d4d4d5, 0px 0px 0px 1px #d4d4d5;">
+        <div class="content" style="background-color: white; padding: 14px">
+          {{#each userinfo}}
+          <a class="header light-green-text" style="font-size: 1.75rem; padding-top: 10px; font-weight: bolder">{{ name }}</a>
+          <div class="experience-text" style="font-weight: bolder; margin-top: 10px">About Me:</div>{{aboutMe}}
+          <div class="ui divider"></div>
+          <i class="cyan-text user icon"></i>{{removeParenthesis role}}
+          <br>
+          <i class="cyan-text mail icon"></i>{{email}}
+          <br>
+          <i class="cyan-text student icon"></i>{{gradSemester}}
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="ui fluid card" style="background: transparent; box-shadow: 0px 1px 3px 0px #f3f3f3, 0px 0px 0px 1px #f3f3f3">
+        <h3 class="light-green-text headerTitle" style="margin: 0;">MY INTERESTS</h3>
+        <div class="content" style="padding-top: 0; padding-left: 0; border-top: 0">
+          {{#each userinfo}}
+          {{#each tags}}
+
+          <div class="left floated author" style="margin-left: 1rem; margin-top: 1rem">
+            <a class="ui cyan tag label white-text">{{this}}</a>
+          </div>
+
+          {{/each}}
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="ui fluid card" style="background: transparent; box-shadow: 0px 1px 3px 0px #f3f3f3, 0px 0px 0px 1px #f3f3f3">
+        <h3 class="light-green-text headerTitle" style="margin: 0;">MY DEGREE GOALS</h3>
+        <div class="content" style="padding-top: 0; padding-left: 0; border-top: 0">
+          {{#each userinfo}}
+          {{#each degreeGoals}}
+
+          <div class="left floated author" style="margin-left: 1rem; margin-top: 1rem">
+            <a class="ui cyan tag label white-text">{{this}}</a>
+          </div>
+
+          {{/each}}
+          {{/each}}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="column" style="padding-right: 0.5rem; padding-left: 0.5rem">
+      <div class="ui fluid card" style="padding: 14px; margin: 0">
+        <h3 class="light-green-text headerTitle" style="margin-top: 0">MY VIGNETTES
+          <div class="ui tiny right floated cyan white-text button">EDIT</div></h3>
+        {{ #each vignetteList }}
+        <div class="content" style="padding: 1rem 0 1rem 0">
+          <div class="header light-green-text">{{title}}</div>
+          <div class="meta">
+            <span class="right floated time experience-text">{{ formatDate createdAt}}</span>
+            <span class="category experience-text" style="font-weight: 600">{{uhEmail}}</span>
+          </div>
+          <div class="description">
+            <p style="text-indent: 1rem;">{{description}}</p>
+          </div>
+          {{ #each tags }}
+          <div class="right floated author" style="margin-left: 1rem; margin-top: 1rem">
+            <a class="ui cyan tag label white-text">{{this}}</a>
+          </div>
+          {{/each}}
+        </div>
+        {{/each}}
+      </div>
+
+    </div>
+
+    <div class="column" style="padding-left: 0.5rem">
+      <div class="ui fluid card" style="padding: 14px 14px 0 14px; margin: 0">
+        <h3 class="light-green-text headerTitle" style="margin-top: 0">MY PETITIONS
+          <div class="ui tiny right floated cyan white-text button">EDIT</div></h3>
+        {{ #each petitionList }}
+        <div class="content" style="padding: 1rem 0 1rem 0">
+          <div class="header light-green-text">{{title}}</div>
+          <div class="meta">
+            <span class="right floated time experience-text">{{formatDate createdAt }}</span>
+            <span class="category experience-text" style="font-weight: 600">{{uhEmail}}</span>
+          </div>
+          <div class="description">
+            <p style="text-indent: 1rem;">{{description}}</p>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="sixteen wide column" style="padding: 1rem 0 0 0">
+    {{> footer }}
+  </div>
+
+  {{/IfLoggedIn}}
+
+  <!--<table class="ui celled table">
+    <thead>
+      <tr></tr>
+    </thead>
+    <tbody>
+    {{#each userinfo}}
+    <tr>
+      <td><img width=100px class="ui avatar tiny image" src="{{ picture }}"></td>
+    </tr>
+    <tr>
+      <td><div class="light-green-text">Name:</div>{{#markdown}}{{{name}}}{{/markdown}}</td>
+    </tr>
+    <tr>
+      <td><div class="light-green-text">Role:</div>{{#markdown}}{{{role}}}{{/markdown}}</td>
+    </tr>
+    <tr>
+      <td><div class="light-green-text">Email:</div>{{#markdown}}{{{email}}}{{/markdown}}</td>
+    </tr>
+    <tr>
+      <td><div class="light-green-text">Graduation:</div>{{#markdown}}{{{gradSemester}}}{{/markdown}}</td>
+    </tr>
+    <tr>
+      <td><div class="light-green-text">About Me:</div>{{#markdown}}{{{aboutMe}}}{{/markdown}}</td>
+    </tr>
+    <tr>
+      <td><div class="light-green-text">Degree Goals:</div>{{#markdown}}{{{degreeGoals}}}{{/markdown}}</td>
+    </tr>
+
+    {{/each}}
+
+    </tbody>
+  </table>-->
+
+
+</template>
